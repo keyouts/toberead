@@ -4,28 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TBR List</title>
-        <link rel="stylesheet" href="./style.css">
-  <style>
-   
-  </style>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div class="widget">
-    <h1>TBR List</h1>
+  <div class="widget" role="region" aria-labelledby="tbrHeading">
+    <h1 id="tbrHeading">TBR List</h1>
 
     <label for="bookTitle">Book Title</label>
-    <input type="text" id="bookTitle" placeholder="e.g. Invisible Man" />
+    <input 
+      type="text" 
+      id="bookTitle" 
+      placeholder="e.g. Invisible Man" 
+      aria-label="Enter book title to add to your To Be Read list"
+    />
 
-    <div class="button-group">
-      <button onclick="addToTBR()">Add</button>
-      <button onclick="toggleEdit()">Edit Mode</button>
-      <button onclick="clearInput()">Clear</button>
+    <div class="button-group" role="group" aria-label="TBR list controls">
+      <button onclick="addToTBR()" aria-label="Add book to TBR list">Add</button>
+      <button onclick="toggleEdit()" aria-label="Toggle edit mode for TBR list">Edit Mode</button>
+      <button onclick="clearInput()" aria-label="Clear book title input">Clear</button>
     </div>
 
-    <div class="tbr-list" id="tbrList"></div>
+    <div 
+      class="tbr-list" 
+      id="tbrList" 
+      role="list" 
+      aria-label="List of books to be read"
+    ></div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
